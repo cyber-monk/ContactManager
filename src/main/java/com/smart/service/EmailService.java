@@ -21,8 +21,8 @@ public class EmailService {
 		//This method is responsible to send email [Without Attachment]
 		public boolean sendEmail(String message, String subject, String to) {
 			boolean result = false;
-			String from = "cybermonk24@gmail.com";
-			String fromPassword = "Pass@123";
+			String from = "YOUR EMAIL ADDRESS";
+			String fromPassword = "PASSWORD";
 			
 			// Variable for gmail host.
 			String host = "smtp.gmail.com";
