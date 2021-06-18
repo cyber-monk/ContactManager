@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<meta charset="UTF-8" />
+
+<title>Settings</title>
+</head>
+<body>
+	<section>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-body">
+							<h3>Change Password</h3>
+							
+							<!-- Success/Error message -->
+							<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert alert-dismissible fade show text-center" role="alert">
+			  					<p class="" th:text="${session.message.content}"></p>  
+			  					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			  					<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+							</div>
+							<!-- Success/Error message -->
+							
+							<form th:action="@{/user/change-password}" method="post">
+								<!-- Old psw START-->
+								<div class="input-group mt-3">
+		    						<div class="input-group-prepend">
+		      							<div class="input-group-text mr-3">
+		      								<i class="fas fa-unlock-alt"></i>
+		      							</div>
+								    </div>
+		    						<input type="text"
+		    							name="oldPassword" 
+		    							id="oldPassword" 
+		    							class="form-control"     							
+		    							placeholder="Enter old password"
+		    							required
+		    						>
+		  						</div>
+								<!-- Old psw END-->
+								
+								<!-- New psw START-->
+								<div class="input-group mt-3">
+		    						<div class="input-group-prepend">
+		      							<div class="input-group-text mr-3">
+		      								<i class="fas fa-key"></i>
+		      							</div>
+								    </div>
+		    						<input type="text"
+		    							name="newPassword" 
+		    							id="newPassword" 
+		    							class="form-control"     							
+		    							placeholder="Enter new password"
+		    							required
+		    						>
+		  						</div>
+								<!-- New psw END-->
+							
+								<!-- Save Button -->
+								<div class="container text-center mt-3">
+									<button type="submit" class="btn btn-outline-success">
+										Change
+									</button>
+								</div>
+								<!-- Save Button -->
+							
+							
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script>
+			$(document).ready(() =>{
+				$('.item').removeClass('active');
+				$('#settings-link').addClass('active');
+			});
+		</script>
+	</section>
+
+
+
+</body>
+</html>

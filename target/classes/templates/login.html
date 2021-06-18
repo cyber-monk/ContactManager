@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+
+<head>
+<meta charset="UTF-8" />
+<title>Login page</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="my-card mt-3">
+					
+						<!-- Display Error message -->
+								<div th:if="${param.error}" class="alert alert-danger alert-dismissible fade show">
+									Invalid Username or Password
+									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								</div>
+								<!-- Display Error message END -->
+								<!-- Display Logout message -->
+								<div th:if="${param.logout}" class="alert alert-success alert-dismissible fade show">
+									You have been logged out..
+									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								</div>
+								<!-- Display Logout message END -->
+						
+						<!-- Display Error message -->
+						<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert alert-dismissible fade show" role="alert">
+  							<p class="text-center" th:text="${session.message.content}"></p>
+  							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						</div>
+						<!-- Display Error message END -->
+						
+						
+
+						<h1 class="text-center">Login</h1>
+
+						<form novalidate th:action="@{/doLogin}" method="post" >
+
+							<!-- Username Field -->
+							<div class="form-group">
+								<label for="exampleInputEmail1">Username</label> 
+								<input
+									name="username"
+									type="text" 
+									id="username"
+									class="form-control" 
+									placeholder="Enter your username" 
+									required
+								/>
+								
+							</div>
+							<!-- Username Field End-->
+							
+							<!-- Password Field -->
+							<div class="form-group">
+								<label for="exampleInputEmail1">Password</label> 
+								<input
+									type="password"  
+									name="password"
+									id="password"
+									class="form-control"
+									placeholder="Enter your password" 
+									required 
+								/>
+							</div>
+							<!-- Field End-->
+							
+							<div class="container">
+								<a th:href="@{/forgot}">Forgot password?</a>
+							</div>
+							
+							<!-- Buttons-->
+							<div class="container text-center mt-2">
+								<button class="btn btn-primary btn-block text-white bg-primary" type="submit">
+									Login
+								</button>	
+							</div>
+							<!-- Buttons End-->
+						</form>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

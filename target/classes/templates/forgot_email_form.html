@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+
+<head>
+<meta charset="UTF-8" />
+<title>Login page</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="my-card mt-3">
+					
+						<h1 class="text-center">Forgot Password ?</h1>
+						
+						<!-- Display Error message -->
+						<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert alert-dismissible fade show" role="alert">
+  							<p class="text-center" th:text="${session.message.content}"></p>
+  							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						</div>
+						<!-- Display Error message END -->
+
+						<form th:action="@{/send-otp}" method="post" >
+
+							<!-- Email Field -->
+							<div class="form-group">
+								<label for="exampleInputEmail1">Enter your registered email address</label> 
+								<input
+									name="email"
+									type="email" 
+									id="email"
+									class="form-control" 
+									placeholder="Enter your email" 
+									required
+								/>
+								
+							</div>
+							<!-- Email Field End-->
+							
+							<!-- Buttons-->
+							<div class="container text-center mt-2">
+								<button class="btn btn-primary btn-block text-white bg-primary" type="submit">
+									Send OTP
+								</button>	
+							</div>
+							<!-- Buttons End-->
+						</form>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>
