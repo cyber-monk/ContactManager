@@ -1,5 +1,8 @@
 # SmartContactManager
-Spring boot application to manage contacts.
+Spring boot application to manage contacts. 
+In this application we can make multiple users with unique username. This user can add/update/delete his contacts. With all types of validations.
+Security also managed by using spring security. Also only that perticular user can access those contact which added by that same user. Other user can not access those contacts.
+Also there is facilty to change the password of user. Also Forget password functionality is there to change the password if any user forgot his password. Forgot password is done with email services which can send random otp to user and if otp validate only then user can set his new password.
 
 ###### Used Technologies : 
  - Springboot
@@ -24,7 +27,7 @@ Spring boot application to manage contacts.
      Follow "/src/main/java/com/smart/service/" this path. 
   6. Then add your email ID and password in "EmailService.java" this class file.
 
-## If any query can contact me on 
+## If you have any query, can contact me on 
 ```
 akshayvdeshmukh1@gmail.com  
 ```
