@@ -27,7 +27,7 @@ Also there is facilty to change the password of user. Also Forget password funct
      Follow "/src/main/java/com/smart/service/" this path. 
   6. Then add your email ID and password in "EmailService.java" this class file.
 
-## If you have any query, can contact me on 
+## Any query? Contact me.. 
 ```
 akshayvdeshmukh1@gmail.com  
 ```
