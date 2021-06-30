@@ -1,4 +1,4 @@
-# SmartContactManager
+# ContactManager
 Spring boot application to manage contacts. 
 In this application we can make multiple users with unique username. This user can add/update/delete his contacts. With all types of validations.
 Security also managed by using spring security. Also only that perticular user can access those contact which added by that same user. Other user can not access those contacts.
