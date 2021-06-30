@@ -24,6 +24,4 @@ Spring boot application to manage contacts.
      Follow "/src/main/java/com/smart/service/" this path. 
   6. Then add your email ID and password in "EmailService.java" this class file.
 
-```
-If any query can **contact** me on *akshayvdeshmukh1@gmail.com*
-```
+If any query can ** contact ** me on  ``` * akshayvdeshmukh1@gmail.com * ```
