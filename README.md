@@ -1,7 +1,7 @@
 # SmartContactManager
 Spring boot application to manage contacts.
 
-###Used Technologies : 
+######Used Technologies : 
  >Springboot
  >Hibernate
  >Thymeleaf
@@ -11,7 +11,7 @@ Spring boot application to manage contacts.
  >Material
  >Mysql
  
- ###Tools required to run project :
+######Tools required to run project :
  >Ide - STS / Eclipes / Intellij
  >DB - Mysql   
   
